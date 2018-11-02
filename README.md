@@ -2,7 +2,7 @@
 
 # Summary
 First deploy capability is for RPM based Linux. Followed by Debian based Linux and Windows w/powershell. This script will query the
-EC3 Instance metadata endpoint for an assumed role to access a S3 bucket and download the Qualys Cloud Agent installer.
+EC2 Instance metadata endpoint for an assumed role to access a S3 bucket and download the Qualys Cloud Agent installer.
 The instance assumed role will provide the key, secret, and token for the AWS ALI tools to execute a call to "aws s3 cp ${resource} ${outputFile}"
 using the key, secret, and token from the AWS CLI environment variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN
 
