@@ -12,12 +12,15 @@ In the example provided, a role was created that can access the S3 bucket with R
 during the instance provisioning stage. The script then checks the AWS EC2 instance metadata service to access the Key, Secret, and token
 for the role and assigning those to the environment variables so the instance can call the AWS CLI to download the file from the S3 bucket.
 Then once the package is downloaded, the script executes the install and configuration of the agent.
+
 *RPM Linux*
+
 For RPM based Linux the script attempts to install the JQ package for parsing the EC2 instance metadata json. If you do not want
 JQ installed on the instance you will need to update those lines calling it to use another method to parse the metadata service json
 response to assign the environment variables.
 
 *Ubuntu/Debian*
+
 For Ubuntu/Debian Linux, this script was tested on Ubuntu 18.04 LTS (ami-0ac019f4fcb7cb7e6). Require installation of awscli and jq modules.
 initial call for apt -y update. This could be altered to update all available installed packaged very easily. If you do not want
 JQ installed on the instance you will need to update those lines calling it to use another method to parse the metadata service json
